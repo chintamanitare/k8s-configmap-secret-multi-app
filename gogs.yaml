@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: gogs
+  name: gogs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gogs
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: gogs
+    spec:
+      containers:
+      - image: gogs/gogs
+        name: gogs
+        env:
+        - name: DB_TYPE
+          value: postgres
+        - name: DB_HOST
+          value: postgres-service:5432
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: common-config
+              key: POSTGRES_DB
+        - name: DB_USER
+          valueFrom:
+            configMapKeyRef:
+              name: common-config
+              key: POSTGRES_USER
+        - name: DB_PASSWD
+          valueFrom:
+            secretKeyRef:
+              name: common-secret
+              key: POSTGRES_PASSWORD
+        resources: {}
+status: {}

@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2026-02-23T06:19:06Z"
+  labels:
+    app: gogs
+  name: gogs-service
+  namespace: default
+  resourceVersion: "4736"
+  uid: dd2ff5b4-c367-45ae-a9ad-4ecd9261c7ba
+spec:
+  clusterIP: 10.108.158.46
+  clusterIPs:
+  - 10.108.158.46
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 31329
+    port: 3000
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: gogs
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

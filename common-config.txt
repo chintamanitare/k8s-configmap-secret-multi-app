@@ -1,0 +1,4 @@
+MYSQL_DATABASE=wordpressdb
+MYSQL_USER=wpuser
+POSTGRES_DB=gogsdb
+POSTGRES_USER=gogsuser

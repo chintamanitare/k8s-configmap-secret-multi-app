@@ -1,0 +1,13 @@
+apiVersion: v1
+data:
+  MYSQL_DATABASE: wordpressdb
+  MYSQL_USER: wpuser
+  POSTGRES_DB: gogsdb
+  POSTGRES_USER: gogsuser
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2026-02-23T05:06:02Z"
+  name: common-config
+  namespace: default
+  resourceVersion: "1366"
+  uid: af6ffe6c-c53d-4443-81a0-b3ad9d17b5f6

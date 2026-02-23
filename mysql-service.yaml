@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2026-02-23T05:29:05Z"
+  labels:
+    app: mysql
+  name: mysql-service
+  namespace: default
+  resourceVersion: "2430"
+  uid: 0bcaa266-4062-4a9f-a186-59b313c98cad
+spec:
+  clusterIP: 10.100.28.85
+  clusterIPs:
+  - 10.100.28.85
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 3306
+    protocol: TCP
+    targetPort: 3306
+  selector:
+    app: mysql
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
