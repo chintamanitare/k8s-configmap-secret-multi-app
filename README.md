@@ -1,4 +1,4 @@
-# Kubernetes ConfigMap & Secret Multi-App Project
+# Kubernetes ConfigMap & Secret Multi-App Project :
 
 ## Applications:
 - MySQL
